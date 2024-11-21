@@ -35,14 +35,14 @@
                 </div>
                 <div class="submitBtn">
                     <input type="submit" id="submit" value="Add">
-                    <br>
-                    <p id="addSuccess"></p>
                 </div>
+                <br>
+                <div id="addMsg"></div>
             </form>
         </div>
 
         <div class="btn-form" id="edit-form">
-            <form onsubmit="editMedicine(ev)" method="get">
+            <form onsubmit="editMedicine(event)" method="POST">
                 <div class="nameInput">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Medicine Name" required>
@@ -55,13 +55,14 @@
                 </div>
                 <div class="submitBtn">
                     <input type="submit" id="submit" value="Update">
-                    <p id="editSuccess"></p>
                 </div>
+                <br>
+                <div id="editMsg"></div>
             </form>
         </div>
 
         <div class="btn-form" id="del-form">
-            <form onsubmit="delMedicine(ev)" method="get">
+            <form onsubmit="delMedicine(event)" method="POST">
                 <div class="nameInput">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Medicine Name" required>
@@ -69,8 +70,9 @@
                 </div>
                 <div class="submitBtn">
                     <input type="submit" id="submit" value="Delete">
-                    <p id="delSuccess"></p>
                 </div>
+                <br>
+                <div id="delMsg"></div>
             </form>
         </div>
         </div>

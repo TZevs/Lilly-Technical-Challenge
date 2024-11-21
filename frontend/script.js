@@ -71,7 +71,7 @@ function addMedicine(ev) {
         convertedPrice = parseFloat(mPrice);
     }
     catch {
-        document.querySelector("#addPriceError").textContent = "Please enter a valid amount";
+        document.querySelector("#addMsg").textContent = "Please enter a valid amount";
         return;
     }
 
@@ -80,32 +80,80 @@ function addMedicine(ev) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
     xhr.onload = function () {
         if (xhr.status === 200) {
-            document.querySelector("#addSuccess").textContent = `Medicine: ${mName}, Price: ${mPrice} added.`;
+            document.querySelector("#addMsg").textContent = `Medicine: ${mName}, Price: ${mPrice} added.`;
         } else {
-            document.querySelector("#addSuccess").textContent = "Error adding medicine.";
+            document.querySelector("#addMsg").textContent = "Error adding medicine.";
         }
     };
     xhr.onerror = function () {
-        document.querySelector("#addSuccess").textContent = "Request Failed.";
+        document.querySelector("#addMsg").textContent = "Request Failed.";
     };
     const params = `name=${encodeURIComponent(mName)}&price=${encodeURIComponent(mPrice)}`;
     xhr.send(params);
 
     setTimeout(function() {
         location.reload();
-    }, 3000);
+    }, 2000);
 }
 function editMedicine(ev) {
     ev.preventDefault();
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", "/update_med", true);
+    const form = ev.target;
+    const mName = form.name.value;
+    const mPrice = form.price.value;
+    let convertedPrice = 0;
 
+    try {
+        convertedPrice = parseFloat(mPrice);
+    }
+    catch {
+        document.querySelector("#addMsg").textContent = "Please enter a valid amount";
+        return;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "/update", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.querySelector("#editMsg").textContent = `Medicine: ${mName}, Price: ${mPrice} updated.`;
+        } else {
+            document.querySelector("#editMsg").textContent = "Error Editing medicine.";
+        }
+    };
+    xhr.onerror = function () {
+        document.querySelector("#editMsg").textContent = "Request Failed.";
+    };
+    const params = `name=${encodeURIComponent(mName)}&price=${encodeURIComponent(mPrice)}`;
+    xhr.send(params);
+
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
 }
 function delMedicine(ev) {
     ev.preventDefault();
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", "/delete_med?n=&p=" +  true);
+    const form = ev.target;
+    const mName = form.name.value;
 
+    const xhr = new XMLHttpRequest();
+    xhr.open("DELETE", "/delete", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.querySelector("#delMsg").textContent = `Medicine: ${mName} deleted`;
+        } else {
+            document.querySelector("#delMsg").textContent = "Error Editing medicine.";
+        }
+    };
+    xhr.onerror = function () {
+        document.querySelector("#delMsg").textContent = "Request Failed.";
+    };
+    const params = `name=${encodeURIComponent(mName)}`;
+    xhr.send(params);
+
+    setTimeout(function() {
+        location.reload();
+    }, 2000);
 }
