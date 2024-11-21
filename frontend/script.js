@@ -44,7 +44,6 @@ function toggleAdd() {
     add.style.display = "flex";
     edit.style.display = "none";
     del.style.display = "none";
-
 }
 function toggleEdit() {
     add.style.display = "none";
@@ -56,7 +55,6 @@ function toggleDel() {
     add.style.display = "none";
     edit.style.display = "none";
     del.style.display = "flex";
-
 }
 
 function addMedicine(ev) {

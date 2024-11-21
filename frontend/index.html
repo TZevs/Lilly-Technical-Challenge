@@ -21,7 +21,7 @@
         </div>
 
         <div class="btn-form-container">
-        <div class="btn-form" id="add-form">
+        <div class="btn-form" id="add-form" style="display: none;">
             <form onsubmit="addMedicine(event)" method="POST">
                 <div class="nameInput">
                     <label for="name">Name:</label>
@@ -41,7 +41,7 @@
             </form>
         </div>
 
-        <div class="btn-form" id="edit-form">
+        <div class="btn-form" id="edit-form" style="display: none;">
             <form onsubmit="editMedicine(event)" method="POST">
                 <div class="nameInput">
                     <label for="name">Name:</label>
@@ -61,7 +61,7 @@
             </form>
         </div>
 
-        <div class="btn-form" id="del-form">
+        <div class="btn-form" id="del-form" style="display: none;">
             <form onsubmit="delMedicine(event)" method="POST">
                 <div class="nameInput">
                     <label for="name">Name:</label>
@@ -78,12 +78,6 @@
         </div>
 
         <div id="medicines-grid" class="grid-container"></div>
-
-        <div class="search-container">
-            <div class="search-medicines">
-                <input type="text">
-            </div>
-        </div>
     </main>
     <script src="static/script.js"></script>
 </body>
