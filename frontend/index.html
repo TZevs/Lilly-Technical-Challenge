@@ -13,14 +13,76 @@
     <header>
     </header>
     <main>
-        <h1 style="text-align: center;">Medicines</h1>
-        <div id="medicines-grid" class="grid-container">
-            <div class="medicine-item">
+        <h1 style="text-align: center;">Medicine Tracker</h1>
+        <div class="btn-container">
+            <button onclick="toggleAdd()" class="btn">Add Medicine</button>
+            <button onclick="toggleEdit()" class="btn">Edit Medicine</button>
+            <button onclick="toggleDel()" class="btn">Delete Medicine</button>
+        </div>
 
+        <div class="btn-form-container">
+        <div class="btn-form" id="add-form">
+            <form onsubmit="addMedicine(event)" method="POST">
+                <div class="nameInput">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Medicine Name" required>
+                </div>
+                <br>
+                <div class="priceInput">
+                    <label for="price">Price:</label>
+                    <input type="number" step="0.01" min="0.00" id="price" name="price" placeholder="£ Medicine Price" required>
+                    <p id="addPriceError"></p>
+                </div>
+                <div class="submitBtn">
+                    <input type="submit" id="submit" value="Add">
+                    <br>
+                    <p id="addSuccess"></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="btn-form" id="edit-form">
+            <form onsubmit="editMedicine(ev)" method="get">
+                <div class="nameInput">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Medicine Name" required>
+                </div>
+                <br>
+                <div class="priceInput">
+                    <label for="price">Price:</label>
+                    <input type="number" step="0.01" min="0.00" id="price" name="price" placeholder="£ Medicine Price" required>
+                    <p id="editPriceError"></p>
+                </div>
+                <div class="submitBtn">
+                    <input type="submit" id="submit" value="Update">
+                    <p id="editSuccess"></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="btn-form" id="del-form">
+            <form onsubmit="delMedicine(ev)" method="get">
+                <div class="nameInput">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Medicine Name" required>
+                    <p id="delPriceError"></p>
+                </div>
+                <div class="submitBtn">
+                    <input type="submit" id="submit" value="Delete">
+                    <p id="delSuccess"></p>
+                </div>
+            </form>
+        </div>
+        </div>
+
+        <div id="medicines-grid" class="grid-container"></div>
+
+        <div class="search-container">
+            <div class="search-medicines">
+                <input type="text">
             </div>
         </div>
-        <ul id="medicines-list"></ul>
     </main>
+    <script src="static/script.js"></script>
 </body>
-<script src="static/script.js"></script>
 </html>

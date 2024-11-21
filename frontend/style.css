@@ -30,3 +30,55 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    margin: 5px 40px;
+}
+.medicine-item {
+    background-color: #FAB12F;
+    padding: 20px;
+    border: 3px solid #FA812F;
+    border-radius: 5px;
+    color: black;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 3px 5px;
+}
+.btn {
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    width: 20%;
+}
+.btn-form-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 3px 5px;
+}
+.btn-form {
+    justify-content: center;
+    padding: 20px;
+    border: 3px solid #FA4032;
+    border-radius: 7px;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+}
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+.submitBtn > input {
+    width: 50%;
+    border-radius: 5px;
+}
