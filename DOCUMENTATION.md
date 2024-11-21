@@ -6,6 +6,7 @@
 
 ## Approach
 *How did you approach this challenge? Did you work through the objectives in any particular order? If so, why? Did you utilize any external resources, such as tutorials, guides, or other materials?*
+My first steps were to understand both the system as it was and the objectives I was to complete. After looking through the objectives I decided to put them in what I thought would be the priority order with the functionality first and design later, which happened to be the order the objectives are listed in. 
 
 ## Objectives - Innovative Solutions
 *For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about.*
